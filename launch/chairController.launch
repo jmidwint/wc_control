@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+
+   <!-- Launch the main chair controller. 
+   
+   Example of launch command to invoke: 
+                                             
+       roslaunch wc_control chairController.launch 
+
+   Temporary: Can run the chairController this way    
+       rosrun wc_control chairControl.py
+
+    -->
+ 
+
+   <node name="chairControl" pkg="wc_control" type="chairControl.py"  output="screen">
+   </node>
+
+
+</launch>

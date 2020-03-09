@@ -1,0 +1,10 @@
+<launch>
+
+
+  <arg name="config_topics" default="$(find wc_control)/config/chairControl_twist_mux_topics.yaml"/>
+
+  <include file="$(find twist_mux)/launch/twist_mux.launch">
+       <arg name="config_topics" value="$(arg config_topics)"/>
+  </include>
+
+</launch>

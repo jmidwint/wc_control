@@ -1,0 +1,31 @@
+# CONFIG FILE for invoking twist_mux 
+#   See: https://github.com/ros-teleop/twist_mux.git
+# Input topics handled/muxed.
+# For each topic:
+# - name    : name identifier to select the topic
+# - topic   : input topic of geometry_msgs::Twist type
+# - timeout : timeout in seconds to start discarding old messages, and use 0.0 speed instead
+# - priority: priority in the range [0, 255]; the higher the more priority over other topics
+
+topics:
+-
+  name    : perception
+  topic   : wc_perception/cmd_vel
+  timeout : 0.5
+  priority: 10
+-
+  name    : xbox
+  topic   : xbox/cmd_vel
+  timeout : 0.5
+  priority: 100
+-
+  name    : chairControl
+  topic   : chairControl/cmd_vel
+  timeout : 0.5
+  priority: 40
+-
+  name    : test
+  topic   : chairTwistTest/cmd_vel
+  timeout : 0.5
+  priority: 20
+
