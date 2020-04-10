@@ -19,5 +19,7 @@
    <!-- chairDrive -->
    <node name="chairDrive" pkg="wc_control" type="chairDrive.py"  output="screen"/>   
 
+   <!-- Launch chair muxer --> 
+   <include file="$(find wc_control)/launch/chairMux.launch"/>  
 
 </launch>
