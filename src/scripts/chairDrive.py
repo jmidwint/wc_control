@@ -3,7 +3,7 @@
 # This file supports driving the wheelchair by converting /cmd_vel topic to a /drive topic. The /drive topic is then
 #   later sent on to the arduino board through a ros node that converts  /drive to a  serial command expected by the arduino. 
 #
-#   The /cmd_vel topic is produced through number of ways:
+#   The /twist_mux/cmd_vel topic is produced through number of ways:
 #
 #      1) as a "drive-by-wire" under human remote control using an xbox controller
 # 
@@ -117,7 +117,7 @@ def callback(msg_received):
 # TODO: Convert to class that loads parms, and creates ros log messages on start up
 def node():
     rospy.init_node('chairDrive')
-    print('\n ROS node chairDrive started ')
+    rospy.loginfo('ROS node chairDrive started. ')
     #rospy.Subscriber("/cmd_vel", TwistStamped, callback)
     rospy.Subscriber("/twist_mux/cmd_vel", Twist, callback)
     #chairJoy_pub = rospy.Publisher("drive", Chair, queue_size=5) # set to global

@@ -12,9 +12,12 @@
 
     -->
  
+   <!-- chairControl -->
+   <node name="chairControl" pkg="wc_control" type="chairControl.py"  output="screen"/>
+ 
 
-   <node name="chairControl" pkg="wc_control" type="chairControl.py"  output="screen">
-   </node>
+   <!-- chairDrive -->
+   <node name="chairDrive" pkg="wc_control" type="chairDrive.py"  output="screen"/>   
 
 
 </launch>
